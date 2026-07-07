@@ -18,7 +18,7 @@
         body {
             background: linear-gradient(-45deg, #0f0f1a, #1a1a3a, #0a1128, #161124);
             background-size: 400% 400%;
-            animation: gradientBG 12s ease infinite; /* Motsin background */
+            animation: gradientBG 12s ease infinite;
             color: #ffffff;
             display: flex;
             justify-content: center;
@@ -27,7 +27,6 @@
             padding: 20px;
         }
 
-        /* Code din dake sanya background din motsi */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -35,8 +34,8 @@
         }
 
         .profile-card {
-            background: rgba(26, 26, 46, 0.85); /* Dan dishi-dishi don a ga background ta baya */
-            backdrop-filter: blur(10px); /* Glassmorphism effect */
+            background: rgba(26, 26, 46, 0.85);
+            backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 30px;
             width: 100%;
@@ -77,23 +76,30 @@
             margin-bottom: 20px;
         }
 
-        /* Sashen Services */
-        .services-box {
+        /* Sashen About Me da Services */
+        .info-box {
             background: rgba(22, 22, 38, 0.7);
             border-radius: 12px;
             padding: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border: 1px solid rgba(34, 34, 59, 0.5);
             text-align: left;
         }
 
-        .services-box h3 {
+        .info-box h3 {
             font-size: 16px;
             color: #00d2ff;
             margin-bottom: 10px;
             text-align: center;
             border-bottom: 1px solid #2a2a4a;
             padding-bottom: 5px;
+        }
+
+        .info-box p {
+            font-size: 14px;
+            color: #d1d1e0;
+            line-height: 1.6;
+            text-align: center;
         }
 
         .service-item {
@@ -138,7 +144,6 @@
             transform: scale(0.98);
         }
 
-        /* Launuka na musamman don kowane maballi */
         .btn-whatsapp { background: #25D366; }
         .btn-phone { background: #007bb5; }
         .btn-facebook { background: #1877F2; }
@@ -164,7 +169,6 @@
             letter-spacing: 1px;
         }
 
-        /* Motsi na shawagi na rubutun kasa */
         @keyframes floatAnimation {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-6px); }
@@ -184,8 +188,14 @@
         <h1>Abubakar Abdullahi</h1>
         <div class="username">@Sirdique0</div>
 
+        <!-- SABON SASHEN: About Me -->
+        <div class="info-box">
+            <h3>About Me</h3>
+            <p>Welcome to ABUBAKARPLACE! I am a creative professional specializing in high-end Graphic Design, Video Editing, and AI-driven branding solutions to bring your ideas to life.</p>
+        </div>
+
         <!-- Sashen Abubuwan da Kake Yi (Services) -->
-        <div class="services-box">
+        <div class="info-box">
             <h3>My Services</h3>
             <div class="service-item">🎬 Video Editing</div>
             <div class="service-item">🤖 AI Image Generation</div>
