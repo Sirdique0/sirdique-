@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abubakar Abdullahi - Portfolio</title>
+    <!-- FontAwesome don icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,16 +15,16 @@
             scroll-behavior: smooth;
         }
 
-        /* BANGO: Mai motsi da kyalli na alfarma */
+        /* GOLDEN BACKGROUND: Salon Zinari na Alfarma (Premium Golden Gradient) */
         body {
-            background: radial-gradient(circle at 50% 50%, #1a1508 0%, #080705 60%, #000000 100%);
+            background: linear-gradient(135deg, #1c1401 0%, #3a2a03 40%, #4a3605 70%, #1f1601 100%);
             color: #ffffff;
             padding-bottom: 40px;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Tasirin kyan gani na taurari a baya */
+        /* Tasirin taurari masu walkiya a kan bangon zinari */
         body::before {
             content: "";
             position: fixed;
@@ -32,24 +33,23 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 20px);
-            background-size: 550px 550px, 350px 350px, 250px 250px;
-            background-position: 0 0, 40px 60px, 130px 270px;
-            animation: backgroundMove 60s linear infinite;
-            opacity: 0.15;
+                radial-gradient(rgba(255, 235, 175, 0.4), rgba(255, 235, 175, 0.05) 2px, transparent 40px),
+                radial-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05) 1px, transparent 30px);
+            background-size: 450px 450px, 300px 300px;
+            background-position: 0 0, 50px 70px;
+            animation: backgroundMove 40s linear infinite;
+            opacity: 0.25;
             z-index: -1;
         }
 
         @keyframes backgroundMove {
-            from { background-position: 0 0, 40px 60px, 130px 270px; }
-            to { background-position: 550px 550px, 390px 410px, 380px 820px; }
+            from { background-position: 0 0, 50px 70px; }
+            to { background-position: 450px 450px, 350px 370px; }
         }
 
         /* Wurin Header / Navigation Bar */
         header {
-            background: rgba(10, 8, 5, 0.95);
+            background: rgba(20, 15, 2, 0.93);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -57,22 +57,23 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #292110;
+            border-bottom: 1px solid #61480b;
             backdrop-filter: blur(8px);
         }
 
         /* Sunan sama na gefe mai Motsi da Launi */
         .logo {
             font-weight: 900;
-            font-size: 20px;
+            font-size: 22px;
             line-height: 1.2;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            background: linear-gradient(45deg, #ffbb00, #fffae6, #ffbb00);
+            letter-spacing: 1.5px;
+            background: linear-gradient(45deg, #ffffff, #ffea9f, #ffffff);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: logoZoom 4s ease-in-out infinite, shine 3s linear infinite;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
 
         @keyframes logoZoom {
@@ -97,10 +98,11 @@
             font-size: 15px;
             font-weight: 600;
             transition: color 0.3s;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
         }
 
         .nav-links a:hover {
-            color: #ffbb00;
+            color: #ffea9f;
         }
 
         /* Babban Akwatin Tsakiya */
@@ -112,15 +114,38 @@
             text-align: center;
         }
 
-        /* Hoton Profile mai katon gwal da haske */
-        .profile-img-container {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
+        /* PROFILE PHOTO ZOOM DA JUYAYYEN ZAGAYE */
+        .profile-wrapper {
+            position: relative;
+            width: 180px;
+            height: 180px;
             margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: profileZoomPulse 4s ease-in-out infinite; /* Profile photo zoom */
+        }
+
+        .profile-wrapper::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ffffff, #ffbb00, transparent, #ffea9f);
+            animation: rotateBorder 6s linear infinite;
+            box-shadow: 0 0 25px rgba(255, 234, 159, 0.6);
+        }
+
+        .profile-img-container {
+            width: 168px;
+            height: 168px;
+            border-radius: 50%;
             overflow: hidden;
-            border: 4px solid #ffbb00;
-            box-shadow: 0 0 30px rgba(255, 187, 0, 0.5);
+            position: relative;
+            z-index: 2;
+            background: #150b02;
+            border: 3px solid rgba(15, 11, 2, 0.8);
         }
 
         .profile-img-container img {
@@ -130,62 +155,79 @@
             transform: scale(1.18);
         }
 
-        /* Bayanan Suna */
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Motsi na musamman don hoton profile ya riƙa yin zoom */
+        @keyframes profileZoomPulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            50% { transform: scale(1.06); box-shadow: 0 0 35px rgba(255, 255, 255, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+        }
+
+        /* RUBUTU MANYA DA SALO */
         .welcome-text {
-            color: #ffbb00;
-            font-size: 20px;
+            color: #fff1c0;
+            font-size: 22px;
             font-weight: 700;
             margin-top: 15px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            letter-spacing: 1px;
         }
 
         .main-name {
-            font-size: 36px;
+            font-size: 40px; /* An ƙara girma */
             font-weight: 800;
             margin: 5px 0 25px;
             color: #ffffff;
             line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 3px 15px rgba(0,0,0,0.7);
+            letter-spacing: 0.5px;
         }
 
         /* Salon Akwatuna */
         .section-box {
-            background: rgba(18, 15, 10, 0.75);
-            border: 1px solid rgba(255, 187, 0, 0.2);
+            background: rgba(15, 11, 2, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 15px;
             padding: 25px;
             margin-bottom: 25px;
             text-align: left;
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
         }
 
-        /* Kan magana mai layin zinari a gefe */
+        /* Kan magana Manya mai layin fari/zinari */
         .section-title {
-            font-size: 20px;
-            color: #ffbb00;
-            margin-bottom: 15px;
+            font-size: 24px; /* An ƙara girma */
+            color: #ffea9f;
+            margin-bottom: 18px;
             text-transform: uppercase;
-            font-weight: 700;
-            border-left: 4px solid #ffbb00;
-            padding-left: 10px;
-            letter-spacing: 1px;
+            font-weight: 800;
+            border-left: 5px solid #ffffff;
+            padding-left: 12px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* Rubutun cikin About Me */
+        /* Rubutun ciki */
         .section-box p {
-            font-size: 16px;
-            color: #e5e5e5;
-            line-height: 1.6;
+            font-size: 17px;
+            color: #f5f5f5;
+            line-height: 1.7;
         }
 
         /* Tsarin Services (Ayyuka) */
         .service-item {
-            font-size: 16px;
-            margin: 12px 0;
-            color: #eeeeee;
+            font-size: 17px;
+            margin: 14px 0;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 12px;
+            font-weight: 600;
         }
 
         /* Tsarin Maballan Social Media */
@@ -196,6 +238,7 @@
             margin-top: 15px;
         }
 
+        /* BUTTONS ZOOM: Tsarin Zoom In da Zoom Out */
         .social-btn {
             display: flex;
             align-items: center;
@@ -205,49 +248,66 @@
             border-radius: 10px;
             text-decoration: none;
             color: #ffffff;
-            font-weight: 600;
-            font-size: 16px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 700;
+            font-size: 17px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            animation: buttonPulse 3s ease-in-out infinite; 
         }
+
+        @keyframes buttonPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Banbanta lokacin motsin maballan don su riƙa yin zoom daban-daban */
+        .social-container a:nth-child(1) { animation-delay: 0.0s; }
+        .social-container a:nth-child(2) { animation-delay: 0.3s; }
+        .social-container a:nth-child(3) { animation-delay: 0.6s; }
+        .social-container a:nth-child(4) { animation-delay: 0.9s; }
+        .social-container a:nth-child(5) { animation-delay: 1.2s; }
+        .social-container a:nth-child(6) { animation-delay: 1.5s; }
 
         .social-btn:active {
-            transform: scale(0.98);
+            transform: scale(0.96);
         }
 
-        .btn-whatsapp { background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2); }
-        .btn-phone { background: #007bb5; box-shadow: 0 4px 15px rgba(0, 123, 181, 0.2); }
-        .btn-facebook { background: #1877F2; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.2); }
-        .btn-tiktok { background: #000000; border: 1px solid #333; }
-        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 4px 15px rgba(220, 39, 67, 0.2); }
-        .btn-email { background: #ea4335; box-shadow: 0 4px 15px rgba(234, 67, 53, 0.2); }
+        .btn-whatsapp { background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-phone { background: #007bb5; box-shadow: 0 4px 15px rgba(0, 123, 181, 0.3); }
+        .btn-facebook { background: #1877F2; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3); }
+        .btn-tiktok { background: #000000; border: 1px solid #444; }
+        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3); }
+        .btn-email { background: #ea4335; box-shadow: 0 4px 15px rgba(234, 67, 53, 0.3); }
 
-        /* Tsarin Motsi da Salon Copyright Text na ƙasa */
+        /* ALL RIGHTS RESERVED: Zoom In/Out da Chanza Kala */
         .copyright-text {
-            font-size: 13px;
-            color: #888888;
-            margin-top: 35px;
+            font-size: 14px;
+            margin-top: 40px;
             text-align: center;
-            font-weight: 500;
-            animation: floatAnimation 3s ease-in-out infinite;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            animation: copyrightAdvance 4s ease-in-out infinite; /* Sanya Zoom da Chanza kala gaba daya */
+        }
+
+        /* Motsi na haɗin gwiwa: Canza girma (zoom) da canza launuka a lokaci guda */
+        @keyframes copyrightAdvance {
+            0% { transform: scale(1); color: #dddddd; }
+            50% { transform: scale(1.1); color: #ffbb00; }
+            100% { transform: scale(1); color: #dddddd; }
         }
 
         .copyright-text .highlight-name {
-            background: linear-gradient(45deg, #ffbb00, #ffffff);
+            background: linear-gradient(45deg, #ffffff, #ffea9f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        @keyframes floatAnimation {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
         }
     </style>
 </head>
 <body>
 
+    <!-- SASHEN SAMA: Header / Navbar -->
     <header>
         <div class="logo">KING<br>SIRDIQUE</div>
         <ul class="nav-links">
@@ -258,31 +318,39 @@
         </ul>
     </header>
 
+    <!-- BABBAN WURIN RUBUTU -->
     <div class="main-container">
 
-        <div class="profile-img-container">
-            <img src="https://github.com/Sirdique0.png" alt="Abubakar Profile">
+        <!-- Hoton Profile Mai Motsi da Zooming -->
+        <div class="profile-wrapper">
+            <div class="profile-img-container">
+                <img src="https://github.com/Sirdique0.png" alt="Abubakar Profile">
+            </div>
         </div>
 
         <div class="welcome-text">Hello, I'm</div>
         <div class="main-name">Abubakar<br>Abdullahi</div>
 
+        <!-- AKWATIN: About Me -->
         <div class="section-box" id="about">
             <div class="section-title">About Me</div>
-            <p>I'm Abubakar Abdullahi, a professional Creative Designer dedicated to delivering quality and excellence. I specialize in bringing unique visions to life through top-tier branding and visual content at ABUBAKARPLACE.</p>
+            <p>I'm Abubakar Abdullahi, a professional Painter and Creative Designer dedicated to delivering quality and excellence. I specialize in Painting Services, Photo Editing, Video Editing, AI Image Generation, Invitation Cards, Flyers, Banners, and Graphic Design. My goal is to transform ideas into stunning visuals and provide reliable, high-quality services that exceed expectations.</p>
         </div>
 
+        <!-- AKWATIN: My Services -->
         <div class="section-box" id="services">
             <div class="section-title">My Services</div>
+            <div class="service-item">🎨 Painting Services</div>
+            <div class="service-item">📸 Photo Editing</div>
             <div class="service-item">🎬 Video Editing</div>
             <div class="service-item">🤖 AI Image Generation</div>
             <div class="service-item">💌 Invitation Cards</div>
             <div class="service-item">📄 Flyers Design</div>
             <div class="service-item">📢 Banners Design</div>
-            <div class="service-item">🎨 Graphic Design</div>
-            <div class="service-item">🌐 Website Development</div>
+            <div class="service-item">🖌️ Graphic Design</div>
         </div>
 
+        <!-- AKWATIN: Connect With Me -->
         <div class="section-box" id="contact">
             <div class="section-title">Connect With Me</div>
             <div class="social-container">
@@ -295,6 +363,7 @@
             </div>
         </div>
 
+        <!-- Sanarwar Mallaka ta Kasa (Mai Zoom da Canza Kala) -->
         <div class="copyright-text">
             &copy; 2026 <span class="highlight-name">SIRDIQUE0</span>. All Rights Reserved.
         </div>
