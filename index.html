@@ -15,16 +15,16 @@
             scroll-behavior: smooth;
         }
 
-        /* GOLDEN BACKGROUND: Salon Zinari na Alfarma (Premium Golden Gradient) */
+        /* COMPONENT GYARA: Sabon Bangon Blue da Sky Blue */
         body {
-            background: linear-gradient(135deg, #1c1401 0%, #3a2a03 40%, #4a3605 70%, #1f1601 100%);
+            background: linear-gradient(135deg, #001f3f 0%, #004080 40%, #0074d9 70%, #7fdbff 100%);
             color: #ffffff;
             padding-bottom: 40px;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Tasirin taurari masu walkiya a kan bangon zinari */
+        /* Tasirin taurari masu walkiya a kan sabon bangon */
         body::before {
             content: "";
             position: fixed;
@@ -33,12 +33,12 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(rgba(255, 235, 175, 0.4), rgba(255, 235, 175, 0.05) 2px, transparent 40px),
-                radial-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05) 1px, transparent 30px);
+                radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.05) 2px, transparent 40px),
+                radial-gradient(rgba(127, 219, 255, 0.4), rgba(127, 219, 255, 0.05) 1px, transparent 30px);
             background-size: 450px 450px, 300px 300px;
             background-position: 0 0, 50px 70px;
             animation: backgroundMove 40s linear infinite;
-            opacity: 0.25;
+            opacity: 0.3;
             z-index: -1;
         }
 
@@ -49,7 +49,7 @@
 
         /* Wurin Header / Navigation Bar */
         header {
-            background: rgba(20, 15, 2, 0.93);
+            background: rgba(0, 31, 63, 0.93);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -57,7 +57,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #61480b;
+            border-bottom: 1px solid #0074d9;
             backdrop-filter: blur(8px);
         }
 
@@ -68,7 +68,7 @@
             line-height: 1.2;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            background: linear-gradient(45deg, #ffffff, #ffea9f, #ffffff);
+            background: linear-gradient(45deg, #ffffff, #7fdbff, #ffffff);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -102,7 +102,7 @@
         }
 
         .nav-links a:hover {
-            color: #ffea9f;
+            color: #7fdbff;
         }
 
         /* Babban Akwatin Tsakiya */
@@ -123,7 +123,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: profileZoomPulse 4s ease-in-out infinite; /* Profile photo zoom */
+            animation: profileZoomPulse 4s ease-in-out infinite;
         }
 
         .profile-wrapper::before {
@@ -132,9 +132,9 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background: linear-gradient(45deg, #ffffff, #ffbb00, transparent, #ffea9f);
+            background: linear-gradient(45deg, #ffffff, #0074d9, transparent, #7fdbff);
             animation: rotateBorder 6s linear infinite;
-            box-shadow: 0 0 25px rgba(255, 234, 159, 0.6);
+            box-shadow: 0 0 25px rgba(127, 219, 255, 0.6);
         }
 
         .profile-img-container {
@@ -144,8 +144,8 @@
             overflow: hidden;
             position: relative;
             z-index: 2;
-            background: #150b02;
-            border: 3px solid rgba(15, 11, 2, 0.8);
+            background: #001f3f;
+            border: 3px solid rgba(0, 31, 63, 0.8);
         }
 
         .profile-img-container img {
@@ -160,16 +160,15 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Motsi na musamman don hoton profile ya riƙa yin zoom */
         @keyframes profileZoomPulse {
-            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 116, 217, 0.3); }
             50% { transform: scale(1.06); box-shadow: 0 0 35px rgba(255, 255, 255, 0.6); }
-            100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 116, 217, 0.3); }
         }
 
         /* RUBUTU MANYA DA SALO */
         .welcome-text {
-            color: #fff1c0;
+            color: #7fdbff;
             font-size: 22px;
             font-weight: 700;
             margin-top: 15px;
@@ -178,7 +177,7 @@
         }
 
         .main-name {
-            font-size: 40px; /* An ƙara girma */
+            font-size: 40px;
             font-weight: 800;
             margin: 5px 0 25px;
             color: #ffffff;
@@ -189,7 +188,7 @@
 
         /* Salon Akwatuna */
         .section-box {
-            background: rgba(15, 11, 2, 0.85);
+            background: rgba(0, 31, 63, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 15px;
             padding: 25px;
@@ -199,10 +198,10 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.6);
         }
 
-        /* Kan magana Manya mai layin fari/zinari */
+        /* Kan magana Manya mai layin fari */
         .section-title {
-            font-size: 24px; /* An ƙara girma */
-            color: #ffea9f;
+            font-size: 24px;
+            color: #7fdbff;
             margin-bottom: 18px;
             text-transform: uppercase;
             font-weight: 800;
@@ -260,7 +259,7 @@
             100% { transform: scale(1); }
         }
 
-        /* Banbanta lokacin motsin maballan don su riƙa yin zoom daban-daban */
+        /* Banbanta lokacin motsin maballan */
         .social-container a:nth-child(1) { animation-delay: 0.0s; }
         .social-container a:nth-child(2) { animation-delay: 0.3s; }
         .social-container a:nth-child(3) { animation-delay: 0.6s; }
@@ -287,18 +286,17 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-            animation: copyrightAdvance 4s ease-in-out infinite; /* Sanya Zoom da Chanza kala gaba daya */
+            animation: copyrightAdvance 4s ease-in-out infinite;
         }
 
-        /* Motsi na haɗin gwiwa: Canza girma (zoom) da canza launuka a lokaci guda */
         @keyframes copyrightAdvance {
             0% { transform: scale(1); color: #dddddd; }
-            50% { transform: scale(1.1); color: #ffbb00; }
+            50% { transform: scale(1.1); color: #7fdbff; }
             100% { transform: scale(1); color: #dddddd; }
         }
 
         .copyright-text .highlight-name {
-            background: linear-gradient(45deg, #ffffff, #ffea9f);
+            background: linear-gradient(45deg, #ffffff, #7fdbff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: bold;
