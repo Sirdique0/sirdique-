@@ -18,34 +18,11 @@
         /* Bangon Blue da Sky Blue na Alfarma */
         body {
             background: linear-gradient(135deg, #001f3f 0%, #004080 40%, #0074d9 70%, #7fdbff 100%);
+            background-attachment: fixed;
             color: #ffffff;
             padding-bottom: 40px;
             position: relative;
             overflow-x: hidden;
-        }
-
-        /* Shadow Shimmer Animation dake wucewa a bango */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at -20% -20%, rgba(255, 255, 255, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 120% 120%, rgba(127, 219, 255, 0.2) 0%, transparent 50%),
-                linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.08) 40%, rgba(127, 219, 255, 0.12) 50%, transparent 60%),
-                radial-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.03) 1.5px, transparent 30px);
-            background-size: 100% 100%, 100% 100%, 300% 100%, 350px 350px;
-            animation: professionalShadowSweep 12s infinite linear;
-            z-index: -1;
-        }
-
-        @keyframes professionalShadowSweep {
-            0% { background-position: 0% 0%, 100% 100%, 200% 0%, 0px 0px; }
-            50% { background-position: 10% 10%, 90% 90%, 0% 0%, 175px 175px; }
-            100% { background-position: 0% 0%, 100% 100%, -200% 0%, 350px 350px; }
         }
 
         /* --- SASHEN BRUSHES, AI, DA CAMERAS A BANGO --- */
@@ -60,11 +37,10 @@
             overflow: hidden;
         }
 
-        /* Brushes suna fadowa */
         .brush {
             position: absolute;
             font-size: 35px;
-            opacity: 0.18;
+            opacity: 0.15;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
             animation: brushFall linear infinite;
         }
@@ -77,28 +53,24 @@
             100% { transform: translateY(110vh) rotate(360deg); }
         }
 
-        /* Alamar AI, Editing, da CAMERAS suna yawo */
         .floating-icon {
             position: absolute;
-            opacity: 0.22;
+            opacity: 0.18;
             animation: elementsFloating 12s infinite ease-in-out;
         }
         
-        /* Kaloli da wuraren zama na kowane icon */
-        .ai-1 { font-size: 40px; color: #7fdbff; top: 20%; left: 8%; animation-delay: 0s; filter: drop-shadow(0 0 10px rgba(127, 219, 255, 0.5)); }
-        .ai-2 { font-size: 40px; color: #b10dc9; top: 65%; right: 8%; animation-delay: 3s; filter: drop-shadow(0 0 10px rgba(177, 13, 201, 0.5)); }
-        .cam-1 { font-size: 38px; color: #ffffff; top: 45%; left: 12%; animation-delay: 5s; filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4)); }
-        .cam-2 { font-size: 38px; color: #ff851b; top: 15%; right: 15%; animation-delay: 2s; filter: drop-shadow(0 0 12px rgba(255, 133, 27, 0.4)); }
+        .ai-1 { font-size: 40px; color: #7fdbff; top: 20%; left: 8%; animation-delay: 0s; }
+        .ai-2 { font-size: 40px; color: #b10dc9; top: 65%; right: 8%; animation-delay: 3s; }
+        .cam-1 { font-size: 38px; color: #ffffff; top: 45%; left: 12%; animation-delay: 5s; }
+        .cam-2 { font-size: 38px; color: #ff851b; top: 15%; right: 15%; animation-delay: 2s; }
 
         @keyframes elementsFloating {
-            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            25% { transform: translate(25px, 45px) rotate(15deg) scale(1.08); }
-            50% { transform: translate(50px, 0px) rotate(-10deg) scale(1); }
-            75% { transform: translate(25px, -45px) rotate(20deg) scale(0.92); }
-            100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(25px, 25px) rotate(10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
         }
 
-        /* Header Tsari na dā */
+        /* Header Tsari */
         header {
             background: #001f3f;
             display: flex;
@@ -113,7 +85,7 @@
             gap: 12px;
         }
 
-        /* SUNA MAI KALOLI MASU LIYAFA DA STICKER SHIMMER */
+        /* Logo mai canza launi da Walkiya */
         .logo {
             font-weight: 900;
             font-size: 24px;
@@ -136,22 +108,22 @@
             100% { background-position: 100% 50%; }
         }
 
+        /* Walkiyar dake gilmawa a jikin logo */
         .logo::after {
             content: '';
             position: absolute;
             top: 0;
-            left: -150%;
+            left: -100%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
             transform: skewX(-25deg);
-            animation: stickerPass 2.5s infinite ease-in-out;
+            animation: shineEffect 3s infinite;
         }
 
-        @keyframes stickerPass {
-            0% { left: -150%; }
-            50% { left: 150%; }
-            100% { left: 150%; }
+        @keyframes shineEffect {
+            0% { left: -100%; }
+            100% { left: 200%; }
         }
 
         /* Links na tsakiya */
@@ -187,16 +159,17 @@
             z-index: 5;
         }
 
-        /* PROFILE PHOTO ZOOM */
+        /* PROFILE PHOTO */
         .profile-wrapper {
             position: relative;
-            width: 180px;
-            height: 180px;
-            margin: 20px auto;
+            width: 130px; 
+            height: 130px; 
+            margin: 20px 0 10px auto; 
+            margin-right: auto;
+            margin-left: 0; 
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: profileZoomPulse 4s ease-in-out infinite;
         }
 
         .profile-wrapper::before {
@@ -207,12 +180,12 @@
             border-radius: 50%;
             background: linear-gradient(45deg, #ffffff, #0074d9, transparent, #7fdbff);
             animation: rotateBorder 6s linear infinite;
-            box-shadow: 0 0 25px rgba(127, 219, 255, 0.6);
+            box-shadow: 0 0 20px rgba(127, 219, 255, 0.5);
         }
 
         .profile-img-container {
-            width: 168px;
-            height: 168px;
+            width: 120px; 
+            height: 120px;
             border-radius: 50%;
             overflow: hidden;
             position: relative;
@@ -225,7 +198,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.18);
         }
 
         @keyframes rotateBorder {
@@ -233,40 +205,79 @@
             100% { transform: rotate(360deg); }
         }
 
-        @keyframes profileZoomPulse {
-            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 116, 217, 0.3); }
-            50% { transform: scale(1.06); box-shadow: 0 0 35px rgba(255, 255, 255, 0.6); }
-            100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 116, 217, 0.3); }
+        /* WELCOME BOX */
+        .welcome-box {
+            position: absolute;
+            top: 40px; 
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; 
+            text-align: right;
+            width: 60%; 
         }
 
-        .welcome-text {
+        .welcome-main {
             color: #7fdbff;
-            font-size: 22px;
-            font-weight: 700;
-            margin-top: 15px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
-            letter-spacing: 1px;
+            font-size: 38px; 
+            font-weight: 900;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+            letter-spacing: 2.5px; 
+            text-transform: uppercase;
+            line-height: 0.95;
+        }
+
+        .welcome-sub {
+            color: #ffffff;
+            font-size: 24px; 
+            font-weight: 900;
+            margin-top: 10px; 
+            margin-right: 55px; 
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(0, 116, 217, 0.5); 
+            padding: 3px 14px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* TSARIN RUBUTUN SUNA DA TSUNTSUWA */
+        .name-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 45px 0 25px;
+            min-height: 40px;
+            position: relative;
+            width: 100%;
         }
 
         .main-name {
-            font-size: 40px;
+            font-size: 28px; 
             font-weight: 800;
-            margin: 5px 0 25px;
             color: #ffffff;
-            line-height: 1.2;
             text-shadow: 0 3px 15px rgba(0,0,0,0.7);
             letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .typing-bird {
+            color: #ffdc00;
+            font-size: 24px;
+            margin-left: 8px;
+            text-shadow: 0 0 10px rgba(255, 220, 0, 0.8);
+            display: inline-block;
         }
 
         /* Salon Akwatuna */
         .section-box {
-            background: rgba(0, 31, 63, 0.85);
+            background: rgba(0, 31, 63, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 15px;
             padding: 25px;
             margin-bottom: 25px;
             text-align: left;
-            backdrop-filter: blur(10px);
             box-shadow: 0 12px 30px rgba(0,0,0,0.6);
         }
 
@@ -318,68 +329,47 @@
             font-weight: 700;
             font-size: 17px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-            animation: buttonPulse 3s ease-in-out infinite; 
         }
 
-        @keyframes buttonPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .social-container a:nth-child(1) { animation-delay: 0.0s; }
-        .social-container a:nth-child(2) { animation-delay: 0.3s; }
-        .social-container a:nth-child(3) { animation-delay: 0.6s; }
-        .social-container a:nth-child(4) { animation-delay: 0.9s; }
-        .social-container a:nth-child(5) { animation-delay: 1.2s; }
-        .social-container a:nth-child(6) { animation-delay: 1.5s; }
-
-        .btn-whatsapp { background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
-        .btn-phone { background: #007bb5; box-shadow: 0 4px 15px rgba(0, 123, 181, 0.3); }
-        .btn-facebook { background: #1877F2; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3); }
+        .btn-whatsapp { background: #25D366; }
+        .btn-phone { background: #007bb5; }
+        .btn-facebook { background: #1877F2; }
         .btn-tiktok { background: #000000; border: 1px solid #444; }
-        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3); }
-        .btn-email { background: #ea4335; box-shadow: 0 4px 15px rgba(234, 67, 53, 0.3); }
+        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-email { background: #ea4335; }
 
-        /* ALL RIGHTS RESERVED */
+        /* ALL RIGHTS RESERVED - ANIMATION MAI CANZA LAUNI */
         .copyright-text {
             font-size: 14px;
             margin-top: 40px;
             text-align: center;
             font-weight: 700;
             letter-spacing: 0.5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-            animation: copyrightAdvance 4s ease-in-out infinite;
         }
 
-        @keyframes copyrightAdvance {
-            0% { transform: scale(1); color: #dddddd; }
-            50% { transform: scale(1.1); color: #7fdbff; }
-            100% { transform: scale(1); color: #dddddd; }
+        .colorful-name {
+            animation: colorChange 5s infinite alternate;
+            font-weight: 900;
         }
 
-        .copyright-text .highlight-name {
-            background: linear-gradient(45deg, #ffffff, #7fdbff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
+        @keyframes colorChange {
+            0% { color: #ff4136; }    /* Red */
+            25% { color: #ffdc00; }   /* Yellow */
+            50% { color: #2ecc40; }   /* Green */
+            75% { color: #7fdbff; }   /* Sky Blue */
+            100% { color: #b10dc9; }  /* Purple */
         }
     </style>
 </head>
 <body>
 
-    <!-- SASHEN BANGO: Brushes, AI, da SAFFAREN CAMERAS guda biyu suna yawo -->
+    <!-- SASHEN BANGO -->
     <div class="bg-elements">
-        <!-- Brushes suna fadowa -->
         <i class="fas fa-paint-brush brush brush1"></i>
         <i class="fas fa-paint-brush brush brush2"></i>
         <i class="fas fa-paint-brush brush brush3"></i>
-
-        <!-- Alamar AI da Editing (Magic Wand da Robot) -->
         <i class="fas fa-wand-magic-sparkles floating-icon ai-1"></i>
         <i class="fas fa-robot floating-icon ai-2"></i>
-
-        <!-- KAMERAS GUDA BIYU dake shawagi sama da kasa, gefe da gefe -->
         <i class="fas fa-camera floating-icon cam-1"></i>
         <i class="fas fa-camera-retro floating-icon cam-2"></i>
     </div>
@@ -398,20 +388,29 @@
     <!-- BABBAN WURIN RUBUTU -->
     <div class="main-container">
 
-        <!-- Hoton Profile Mai Motsi -->
+        <!-- Hoton Profile -->
         <div class="profile-wrapper">
             <div class="profile-img-container">
-                <img src="hoto.jpg" alt="Abubakar Profile">
+                <img src="337018.jpeg" alt="Profile Image">
             </div>
         </div>
 
-        <div class="welcome-text">Welcome, I'm</div>
-        <div class="main-name">Abubakar<br>Abdullahi</div>
+        <!-- WELCOME BOX -->
+        <div class="welcome-box">
+            <div class="welcome-main">WELCOME</div>
+            <div class="welcome-sub">I'M</div>
+        </div>
+        
+        <!-- WURIN RUBUTA SUNA DA TSUNTSUWA -->
+        <div class="name-container">
+            <span class="main-name" id="typingName"></span>
+            <i class="fas fa-dove typing-bird" id="birdIcon"></i>
+        </div>
 
         <!-- AKWATIN: About Me -->
         <div class="section-box" id="about">
             <div class="section-title">About Me</div>
-            <p>I'm Abubakar Abdullahi, a professional Painter and Creative Designer dedicated to delivering quality and excellence. I specialize in Painting Services, Photo Editing, Video Editing, AI Image Generation, Invitation Cards, Flyers, Banners, and Graphic Design. My goal is to transform ideas into stunning visuals and provide reliable, high-quality services that exceed expectations.</p>
+            <p>I'm Abubakar Abdullahi, a professional Painter and Creative Designer dedicated to delivering quality and excellence. My services include Painting Services, Photo Editing, Video Editing, AI Image Generation, Invitation Cards, Flyers, Banners, and Graphic Design. My goal is to transform ideas into stunning visuals and provide reliable, high-quality services that exceed expectations.</p>
         </div>
 
         <!-- AKWATIN: My Services -->
@@ -442,9 +441,42 @@
 
         <!-- Sanarwar Mallaka ta Kasa -->
         <div class="copyright-text">
-            &copy; 2026 <span class="highlight-name">SIRDIQUE0</span>. All Rights Reserved.
+            &copy; 2026 <span class="colorful-name">SIRDIQUE0</span>. All Rights Reserved.
         </div>
     </div>
 
+    <!-- JAVASCRIPT MAI INKANTACCEN TSARI -->
+    <script>
+        const textToType = "Abubakar Abdullahi";
+        const targetElement = document.getElementById("typingName");
+        const birdIcon = document.getElementById("birdIcon");
+
+        let charIndex = 0;
+        let mode = "typing";
+
+        function runTypingEffect() {
+            if (mode === "typing") {
+                if (charIndex <= textToType.length) {
+                    targetElement.textContent = textToType.substring(0, charIndex);
+                    charIndex++;
+                    birdIcon.style.display = "inline-block";
+                    setTimeout(runTypingEffect, 150);
+                } else {
+                    birdIcon.style.display = "none";
+                    mode = "waiting";
+                    setTimeout(runTypingEffect, 5000); 
+                }
+            } else {
+                targetElement.textContent = "";
+                charIndex = 0;
+                mode = "typing";
+                runTypingEffect();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            runTypingEffect();
+        });
+    </script>
 </body>
 </html>
