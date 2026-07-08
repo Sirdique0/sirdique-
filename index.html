@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abubakar Abdullahi - Portfolio</title>
-    <!-- FontAwesome don icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -15,7 +14,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Bangon Blue da Sky Blue na Alfarma */
+        /* Bangon Blue da Sky Blue na Alfarma - Anyi shi don gudun gaske */
         body {
             background: linear-gradient(135deg, #001f3f 0%, #004080 40%, #0074d9 70%, #7fdbff 100%);
             background-attachment: fixed;
@@ -25,7 +24,7 @@
             overflow-x: hidden;
         }
 
-        /* --- SASHEN BRUSHES, AI, DA CAMERAS A BANGO --- */
+        /* --- SASHEN BRUSHES DA ICONS A BANGO --- */
         .bg-elements {
             position: fixed;
             top: 0;
@@ -44,7 +43,7 @@
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
             animation: brushFall linear infinite;
         }
-        .brush1 { color: #ff4136; left: 15%; animation-duration: 14s; animation-delay: 0s; }
+        .brush1 { color: #ff4136; left: 15%; animation-duration: 14s; }
         .brush2 { color: #ffdc00; left: 55%; animation-duration: 18s; animation-delay: 3s; }
         .brush3 { color: #2ecc40; left: 80%; animation-duration: 16s; animation-delay: 6s; }
 
@@ -59,7 +58,7 @@
             animation: elementsFloating 12s infinite ease-in-out;
         }
         
-        .ai-1 { font-size: 40px; color: #7fdbff; top: 20%; left: 8%; animation-delay: 0s; }
+        .ai-1 { font-size: 40px; color: #7fdbff; top: 20%; left: 8%; }
         .ai-2 { font-size: 40px; color: #b10dc9; top: 65%; right: 8%; animation-delay: 3s; }
         .cam-1 { font-size: 38px; color: #ffffff; top: 45%; left: 12%; animation-delay: 5s; }
         .cam-2 { font-size: 38px; color: #ff851b; top: 15%; right: 15%; animation-delay: 2s; }
@@ -363,7 +362,6 @@
 </head>
 <body>
 
-    <!-- SASHEN BANGO -->
     <div class="bg-elements">
         <i class="fas fa-paint-brush brush brush1"></i>
         <i class="fas fa-paint-brush brush brush2"></i>
@@ -374,7 +372,6 @@
         <i class="fas fa-camera-retro floating-icon cam-2"></i>
     </div>
 
-    <!-- Header / Navbar -->
     <header>
         <div class="logo">KING SIRDIQUE</div>
         <ul class="nav-links">
@@ -385,35 +382,29 @@
         </ul>
     </header>
 
-    <!-- BABBAN WURIN RUBUTU -->
     <div class="main-container">
 
-        <!-- Hoton Profile -->
         <div class="profile-wrapper">
             <div class="profile-img-container">
-                <img src="337018.jpeg" alt="Profile Image">
+                <img src="hoto.jpg" alt="Profile Image">
             </div>
         </div>
 
-        <!-- WELCOME BOX -->
         <div class="welcome-box">
             <div class="welcome-main">WELCOME</div>
             <div class="welcome-sub">I'M</div>
         </div>
         
-        <!-- WURIN RUBUTA SUNA DA TSUNTSUWA -->
         <div class="name-container">
             <span class="main-name" id="typingName"></span>
             <i class="fas fa-dove typing-bird" id="birdIcon"></i>
         </div>
 
-        <!-- AKWATIN: About Me -->
         <div class="section-box" id="about">
             <div class="section-title">About Me</div>
             <p>I'm Abubakar Abdullahi, a professional Painter and Creative Designer dedicated to delivering quality and excellence. My services include Painting Services, Photo Editing, Video Editing, AI Image Generation, Invitation Cards, Flyers, Banners, and Graphic Design. My goal is to transform ideas into stunning visuals and provide reliable, high-quality services that exceed expectations.</p>
         </div>
 
-        <!-- AKWATIN: My Services -->
         <div class="section-box" id="services">
             <div class="section-title">My Services</div>
             <div class="service-item">🎨 Painting Services</div>
@@ -426,7 +417,6 @@
             <div class="service-item">🖌️ Graphic Design</div>
         </div>
 
-        <!-- AKWATIN: Connect With Me -->
         <div class="section-box" id="contact">
             <div class="section-title">Connect With Me</div>
             <div class="social-container">
@@ -439,13 +429,11 @@
             </div>
         </div>
 
-        <!-- Sanarwar Mallaka ta Kasa -->
         <div class="copyright-text">
             &copy; 2026 <span class="colorful-name">SIRDIQUE0</span>. All Rights Reserved.
         </div>
     </div>
 
-    <!-- JAVASCRIPT MAI INKANTACCEN TSARI -->
     <script>
         const textToType = "Abubakar Abdullahi";
         const targetElement = document.getElementById("typingName");
