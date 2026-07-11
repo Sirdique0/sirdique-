@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abubakar Abdullahi - Portfolio</title>
+    <!-- FontAwesome don icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,7 +15,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Bangon Blue da Sky Blue na Alfarma - Anyi shi don gudun gaske */
+        /* Bangon Blue da Sky Blue na Alfarma */
         body {
             background: linear-gradient(135deg, #001f3f 0%, #004080 40%, #0074d9 70%, #7fdbff 100%);
             background-attachment: fixed;
@@ -24,340 +25,92 @@
             overflow-x: hidden;
         }
 
-        /* --- SASHEN BRUSHES DA ICONS A BANGO --- */
-        .bg-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .brush {
-            position: absolute;
-            font-size: 35px;
-            opacity: 0.15;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
-            animation: brushFall linear infinite;
-        }
+        /* --- SASHEN BANGO --- */
+        .bg-elements { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .brush { position: absolute; font-size: 35px; opacity: 0.15; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3)); animation: brushFall linear infinite; }
         .brush1 { color: #ff4136; left: 15%; animation-duration: 14s; }
         .brush2 { color: #ffdc00; left: 55%; animation-duration: 18s; animation-delay: 3s; }
         .brush3 { color: #2ecc40; left: 80%; animation-duration: 16s; animation-delay: 6s; }
+        @keyframes brushFall { 0% { transform: translateY(-100px) rotate(0deg); } 100% { transform: translateY(110vh) rotate(360deg); } }
 
-        @keyframes brushFall {
-            0% { transform: translateY(-100px) rotate(0deg); }
-            100% { transform: translateY(110vh) rotate(360deg); }
-        }
-
-        .floating-icon {
-            position: absolute;
-            opacity: 0.18;
-            animation: elementsFloating 12s infinite ease-in-out;
-        }
-        
+        .floating-icon { position: absolute; opacity: 0.18; animation: elementsFloating 12s infinite ease-in-out; }
         .ai-1 { font-size: 40px; color: #7fdbff; top: 20%; left: 8%; }
         .ai-2 { font-size: 40px; color: #b10dc9; top: 65%; right: 8%; animation-delay: 3s; }
         .cam-1 { font-size: 38px; color: #ffffff; top: 45%; left: 12%; animation-delay: 5s; }
         .cam-2 { font-size: 38px; color: #ff851b; top: 15%; right: 15%; animation-delay: 2s; }
+        @keyframes elementsFloating { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(25px, 25px) rotate(10deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
 
-        @keyframes elementsFloating {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(25px, 25px) rotate(10deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
-        }
-
-        /* Header Tsari */
-        header {
-            background: #001f3f;
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            justify-content: center;
-            padding: 15px 10px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #0074d9;
-            gap: 12px;
-        }
-
-        /* Logo mai canza launi da Walkiya */
-        .logo {
-            font-weight: 900;
-            font-size: 24px;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, #7fdbff, #ffffff, #ffdc00, #7fdbff);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: logoColorShift 6s ease infinite alternate;
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-            text-align: center;
-        }
-
-        @keyframes logoColorShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-
-        /* Walkiyar dake gilmawa a jikin logo */
-        .logo::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-            transform: skewX(-25deg);
-            animation: shineEffect 3s infinite;
-        }
-
-        @keyframes shineEffect {
-            0% { left: -100%; }
-            100% { left: 200%; }
-        }
-
-        /* Links na tsakiya */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            transition: color 0.3s;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links a:hover {
-            color: #7fdbff;
-        }
+        /* Header */
+        header { background: #001f3f; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #0074d9; gap: 12px; }
+        .logo { font-weight: 900; font-size: 24px; line-height: 1.1; text-transform: uppercase; letter-spacing: 2px; background: linear-gradient(45deg, #7fdbff, #ffffff, #ffdc00, #7fdbff); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: logoColorShift 6s ease infinite alternate; position: relative; overflow: hidden; display: inline-block; text-align: center; }
+        @keyframes logoColorShift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+        .nav-links { display: flex; list-style: none; gap: 20px; justify-content: center; width: 100%; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: #7fdbff; }
 
         /* Babban Akwatin Tsakiya */
-        .main-container {
-            width: 100%;
-            max-width: 500px;
-            margin: 20px auto 0;
-            padding: 0 20px;
-            text-align: center;
-            position: relative;
-            z-index: 5;
-        }
-
+        .main-container { width: 100%; max-width: 500px; margin: 20px auto 0; padding: 0 20px; text-align: center; position: relative; z-index: 5; }
+        
         /* PROFILE PHOTO */
-        .profile-wrapper {
-            position: relative;
-            width: 130px; 
-            height: 130px; 
-            margin: 20px 0 10px auto; 
-            margin-right: auto;
-            margin-left: 0; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-wrapper::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #ffffff, #0074d9, transparent, #7fdbff);
-            animation: rotateBorder 6s linear infinite;
-            box-shadow: 0 0 20px rgba(127, 219, 255, 0.5);
-        }
-
-        .profile-img-container {
-            width: 120px; 
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            position: relative;
-            z-index: 2;
-            background: #001f3f;
-            border: 3px solid rgba(0, 31, 63, 0.8);
-        }
-
-        .profile-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        @keyframes rotateBorder {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        .profile-wrapper { position: relative; width: 130px; height: 130px; margin: 20px 0 10px auto; margin-right: auto; margin-left: 0; display: flex; justify-content: center; align-items: center; }
+        .profile-wrapper::before { content: ""; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: linear-gradient(45deg, #ffffff, #0074d9, transparent, #7fdbff); animation: rotateBorder 6s linear infinite; box-shadow: 0 0 20px rgba(127, 219, 255, 0.5); }
+        .profile-img-container { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; position: relative; z-index: 2; background: #001f3f; border: 3px solid rgba(0, 31, 63, 0.8); }
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        @keyframes rotateBorder { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         /* WELCOME BOX */
-        .welcome-box {
-            position: absolute;
-            top: 40px; 
-            right: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end; 
-            text-align: right;
-            width: 60%; 
-        }
+        .welcome-box { position: absolute; top: 40px; right: 10px; display: flex; flex-direction: column; align-items: flex-end; text-align: right; width: 60%; }
+        .welcome-main { color: #7fdbff; font-size: 38px; font-weight: 900; text-shadow: 0 3px 6px rgba(0,0,0,0.5); letter-spacing: 2.5px; text-transform: uppercase; line-height: 0.95; }
+        .welcome-sub { color: #ffffff; font-size: 24px; font-weight: 900; margin-top: 10px; margin-right: 55px; text-shadow: 0 2px 5px rgba(0,0,0,0.5); letter-spacing: 2px; text-transform: uppercase; background: rgba(0, 116, 217, 0.5); padding: 3px 14px; border-radius: 6px; }
 
-        .welcome-main {
-            color: #7fdbff;
-            font-size: 38px; 
-            font-weight: 900;
-            text-shadow: 0 3px 6px rgba(0,0,0,0.5);
-            letter-spacing: 2.5px; 
-            text-transform: uppercase;
-            line-height: 0.95;
-        }
-
-        .welcome-sub {
-            color: #ffffff;
-            font-size: 24px; 
-            font-weight: 900;
-            margin-top: 10px; 
-            margin-right: 55px; 
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: rgba(0, 116, 217, 0.5); 
-            padding: 3px 14px;
-            border-radius: 6px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        /* TSARIN RUBUTUN SUNA DA TSUNTSUWA */
-        .name-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 45px 0 25px;
-            min-height: 40px;
-            position: relative;
-            width: 100%;
-        }
-
-        .main-name {
-            font-size: 28px; 
-            font-weight: 800;
-            color: #ffffff;
-            text-shadow: 0 3px 15px rgba(0,0,0,0.7);
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .typing-bird {
-            color: #ffdc00;
-            font-size: 24px;
-            margin-left: 8px;
-            text-shadow: 0 0 10px rgba(255, 220, 0, 0.8);
-            display: inline-block;
-        }
+        /* WURIN RUBUTU */
+        .name-container { display: flex; align-items: center; justify-content: center; margin: 45px 0 25px; min-height: 40px; }
+        .main-name { font-size: 28px; font-weight: 800; color: #ffffff; text-shadow: 0 3px 15px rgba(0,0,0,0.7); white-space: nowrap; }
+        .typing-bird { color: #ffdc00; font-size: 24px; margin-left: 8px; display: inline-block; }
 
         /* Salon Akwatuna */
-        .section-box {
-            background: rgba(0, 31, 63, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            text-align: left;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-        }
+        .section-box { background: rgba(0, 31, 63, 0.95); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 15px; padding: 25px; margin-bottom: 25px; text-align: left; box-shadow: 0 12px 30px rgba(0,0,0,0.6); }
+        .section-title { font-size: 24px; color: #7fdbff; margin-bottom: 18px; text-transform: uppercase; font-weight: 800; border-left: 5px solid #ffffff; padding-left: 12px; }
+        .service-item { font-size: 17px; margin: 14px 0; color: #ffffff; font-weight: 600; }
 
-        .section-title {
-            font-size: 24px;
-            color: #7fdbff;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-            font-weight: 800;
-            border-left: 5px solid #ffffff;
-            padding-left: 12px;
-            letter-spacing: 1.5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        /* --- AN RAGE GIRMAN SASHEN REVIEWS ANAN --- */
+        .review-card { 
+            background: rgba(0, 116, 217, 0.15); 
+            border-radius: 8px; 
+            padding: 10px 14px; /* An rage ragas na ciki */
+            margin-top: 10px; 
+            border-left: 3px solid #7fdbff; 
+            max-height: 110px; /* An kayyade tsawonsa */
+            overflow-y: auto; /* Idan rubutun ya wuce kima zai yi scroll */
         }
+        .review-stars { color: #ffdc00; font-size: 12px; margin-bottom: 4px; }
+        .review-text { font-style: italic; font-size: 14px !important; color: #e0e0e0 !important; line-height: 1.4 !important; }
+        .review-author { font-size: 13px; font-weight: 700; color: #7fdbff; margin-top: 4px; text-align: right; }
 
-        .section-box p {
-            font-size: 17px;
-            color: #f5f5f5;
-            line-height: 1.7;
-        }
+        /* --- TSARIN ZABAN TAURARI A FORM --- */
+        .star-rating-form { display: flex; gap: 8px; margin-bottom: 15px; font-size: 22px; }
+        .star-rating-form i { color: #444; cursor: pointer; transition: color 0.2s; }
+        .star-rating-form i.active { color: #ffdc00; }
 
-        .service-item {
-            font-size: 17px;
-            margin: 14px 0;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 600;
-        }
+        .review-form input, .review-form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: none; background: #001f3f; color: white; }
+        .review-form button { width: 100%; padding: 12px; background: #7fdbff; color: #001f3f; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+        .review-form button:hover { background: #ffffff; }
 
-        /* Tsarin Maballan Social Media */
-        .social-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .social-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 17px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
-
+        /* Social Media Buttons */
+        .social-container { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px; border-radius: 10px; text-decoration: none; color: #ffffff; font-weight: 700; }
         .btn-whatsapp { background: #25D366; }
         .btn-phone { background: #007bb5; }
         .btn-facebook { background: #1877F2; }
-        .btn-tiktok { background: #000000; border: 1px solid #444; }
-        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-tiktok { background: #000000; }
+        .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .btn-email { background: #ea4335; }
 
-        /* ALL RIGHTS RESERVED - ANIMATION MAI CANZA LAUNI */
-        .copyright-text {
-            font-size: 14px;
-            margin-top: 40px;
-            text-align: center;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .colorful-name {
-            animation: colorChange 5s infinite alternate;
-            font-weight: 900;
-        }
-
-        @keyframes colorChange {
-            0% { color: #ff4136; }    /* Red */
-            25% { color: #ffdc00; }   /* Yellow */
-            50% { color: #2ecc40; }   /* Green */
-            75% { color: #7fdbff; }   /* Sky Blue */
-            100% { color: #b10dc9; }  /* Purple */
-        }
+        .visitor-counter { margin-top: 30px; font-size: 16px; color: #7fdbff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .counter-number { background: #001f3f; color: #ffdc00; padding: 3px 10px; border-radius: 5px; border: 1px solid #0074d9; }
+        .copyright-text { font-size: 14px; margin-top: 15px; text-align: center; font-weight: 700; }
+        .colorful-name { animation: colorChange 5s infinite alternate; font-weight: 900; }
+        @keyframes colorChange { 0% { color: #ff4136; } 25% { color: #ffdc00; } 50% { color: #2ecc40; } 75% { color: #7fdbff; } 100% { color: #b10dc9; } }
     </style>
 </head>
 <body>
@@ -378,23 +131,19 @@
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
 
     <div class="main-container">
-
         <div class="profile-wrapper">
-            <div class="profile-img-container">
-                <img src="hoto.jpg" alt="Profile Image">
-            </div>
+            <div class="profile-img-container"><img src="hoto.jpg" alt="Profile Image"></div>
         </div>
-
         <div class="welcome-box">
             <div class="welcome-main">WELCOME</div>
             <div class="welcome-sub">I'M</div>
         </div>
-        
         <div class="name-container">
             <span class="main-name" id="typingName"></span>
             <i class="fas fa-dove typing-bird" id="birdIcon"></i>
@@ -402,7 +151,7 @@
 
         <div class="section-box" id="about">
             <div class="section-title">About Me</div>
-            <p>I'm Abubakar Abdullahi, a professional Painter and Creative Designer dedicated to delivering quality and excellence. My services include Painting Services, Photo Editing, Video Editing, AI Image Generation, Invitation Cards, Flyers, Banners, and Graphic Design. My goal is to transform ideas into stunning visuals and provide reliable, high-quality services that exceed expectations.</p>
+            <p>I'm Abubakar Abdullahi, a professional Painter and Creative Designer dedicated to delivering quality and excellence. My services include Painting Services, Photo Editing, Video Editing, AI Image Generation, Invitation Cards, Flyers, Banners, and Graphic Design.</p>
         </div>
 
         <div class="section-box" id="services">
@@ -417,6 +166,47 @@
             <div class="service-item">🖌️ Graphic Design</div>
         </div>
 
+        <!-- SASHEN REVIEWS MAI KARANCIN TSAYI -->
+        <div class="section-box" id="reviews">
+            <div class="section-title">What Clients Say</div>
+            
+            <div id="reviewsContainer">
+                <div class="review-card">
+                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="review-text">"The house painting job was flawless. Beautiful color combination!"</div>
+                    <div class="review-author">- Musa Ibrahim</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="review-text">"Excellent design! The flyer was crisp, professional, and delivered fast."</div>
+                    <div class="review-author">- Aliyu Kano</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star" style="color:#444;"></i></div>
+                    <div class="review-text">"Very good and reliable service. Keep it up!"</div>
+                    <div class="review-author">- Place</div>
+                </div>
+            </div>
+
+            <hr style="margin: 15px 0; border: 0.5px solid #7fdbff;">
+
+            <div class="review-form">
+                <div class="section-title" style="font-size: 16px;">Leave a Review</div>
+                
+                <div class="star-rating-form" id="starRatingSelect">
+                    <i class="fas fa-star active" data-value="1"></i>
+                    <i class="fas fa-star active" data-value="2"></i>
+                    <i class="fas fa-star active" data-value="3"></i>
+                    <i class="fas fa-star active" data-value="4"></i>
+                    <i class="fas fa-star active" data-value="5"></i>
+                </div>
+
+                <input type="text" id="reviewerName" placeholder="Your Name">
+                <textarea id="reviewerText" placeholder="Your Message" rows="2"></textarea>
+                <button onclick="submitReview()">Submit Review</button>
+            </div>
+        </div>
+
         <div class="section-box" id="contact">
             <div class="section-title">Connect With Me</div>
             <div class="social-container">
@@ -429,19 +219,23 @@
             </div>
         </div>
 
+        <div class="visitor-counter">
+            <span><i class="fas fa-users"></i> Total Website Visitors:</span>
+            <span class="counter-number" id="count">1</span>
+        </div>
+
         <div class="copyright-text">
             &copy; 2026 <span class="colorful-name">SIRDIQUE0</span>. All Rights Reserved.
         </div>
     </div>
 
     <script>
+        // Typing Effect
         const textToType = "Abubakar Abdullahi";
         const targetElement = document.getElementById("typingName");
         const birdIcon = document.getElementById("birdIcon");
-
         let charIndex = 0;
         let mode = "typing";
-
         function runTypingEffect() {
             if (mode === "typing") {
                 if (charIndex <= textToType.length) {
@@ -449,21 +243,75 @@
                     charIndex++;
                     birdIcon.style.display = "inline-block";
                     setTimeout(runTypingEffect, 150);
+                } else { birdIcon.style.display = "none"; mode = "waiting"; setTimeout(runTypingEffect, 5000); }
+            } else { targetElement.textContent = ""; charIndex = 0; mode = "typing"; runTypingEffect(); }
+        }
+
+        // Star Selection System
+        let selectedStarsCount = 5; 
+        const starIcons = document.querySelectorAll('#starRatingSelect i');
+        
+        starIcons.forEach(star => {
+            star.addEventListener('click', function() {
+                selectedStarsCount = parseInt(this.getAttribute('data-value'));
+                
+                starIcons.forEach((s, idx) => {
+                    if (idx < selectedStarsCount) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Submit Review Logic
+        function submitReview() {
+            const name = document.getElementById('reviewerName').value;
+            const text = document.getElementById('reviewerText').value;
+            if(name === "" || text === "") { alert("Please fill in both fields!"); return; }
+            
+            const container = document.getElementById('reviewsContainer');
+            
+            let starsHTML = '';
+            for(let i = 1; i <= 5; i++) {
+                if(i <= selectedStarsCount) {
+                    starsHTML += '<i class="fas fa-star"></i>';
                 } else {
-                    birdIcon.style.display = "none";
-                    mode = "waiting";
-                    setTimeout(runTypingEffect, 5000); 
+                    starsHTML += '<i class="fas fa-star" style="color: #444;"></i>';
                 }
-            } else {
-                targetElement.textContent = "";
-                charIndex = 0;
-                mode = "typing";
-                runTypingEffect();
             }
+            
+            const newReview = document.createElement('div');
+            newReview.className = 'review-card';
+            newReview.innerHTML = `
+                <div class="review-stars">${starsHTML}</div>
+                <div class="review-text">"${text}"</div>
+                <div class="review-author">- ${name}</div>
+            `;
+            
+            container.insertBefore(newReview, container.firstChild);
+            
+            while (container.children.length > 3) {
+                container.removeChild(container.lastChild);
+            }
+            
+            document.getElementById('reviewerName').value = "";
+            document.getElementById('reviewerText').value = "";
+            selectedStarsCount = 5;
+            starIcons.forEach(s => s.classList.add('active'));
+        }
+
+        function updateLiveCounter() {
+            let currentVisits = localStorage.getItem('site_visits') || 1;
+            currentVisits = parseInt(currentVisits) + 1;
+            localStorage.setItem('site_visits', currentVisits);
+            document.getElementById('count').innerText = Number(currentVisits).toLocaleString();
         }
 
         document.addEventListener("DOMContentLoaded", () => {
             runTypingEffect();
+            updateLiveCounter();
         });
     </script>
 </body>
