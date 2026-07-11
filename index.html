@@ -73,15 +73,15 @@
         .section-title { font-size: 24px; color: #7fdbff; margin-bottom: 18px; text-transform: uppercase; font-weight: 800; border-left: 5px solid #ffffff; padding-left: 12px; }
         .service-item { font-size: 17px; margin: 14px 0; color: #ffffff; font-weight: 600; }
 
-        /* --- AN RAGE GIRMAN SASHEN REVIEWS ANAN --- */
+        /* --- SASHEN REVIEWS DA AKA RAGE GIRMANSA --- */
         .review-card { 
             background: rgba(0, 116, 217, 0.15); 
             border-radius: 8px; 
-            padding: 10px 14px; /* An rage ragas na ciki */
+            padding: 10px 14px; 
             margin-top: 10px; 
             border-left: 3px solid #7fdbff; 
-            max-height: 110px; /* An kayyade tsawonsa */
-            overflow-y: auto; /* Idan rubutun ya wuce kima zai yi scroll */
+            max-height: 110px; 
+            overflow-y: auto; 
         }
         .review-stars { color: #ffdc00; font-size: 12px; margin-bottom: 4px; }
         .review-text { font-style: italic; font-size: 14px !important; color: #e0e0e0 !important; line-height: 1.4 !important; }
@@ -128,10 +128,10 @@
     <header>
         <div class="logo">KING SIRDIQUE</div>
         <ul class="nav-links">
+            <!-- AN CIRE REVIEWS ANAN DOMIN A SAMU FILI -->
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
@@ -166,7 +166,7 @@
             <div class="service-item">🖌️ Graphic Design</div>
         </div>
 
-        <!-- SASHEN REVIEWS MAI KARANCIN TSAYI -->
+        <!-- SASHEN REVIEWS YANA NAN A JIKIN WEB DIN, AMMA BABU SHI A MENU NA SAMA -->
         <div class="section-box" id="reviews">
             <div class="section-title">What Clients Say</div>
             
@@ -191,8 +191,6 @@
             <hr style="margin: 15px 0; border: 0.5px solid #7fdbff;">
 
             <div class="review-form">
-                <div class="section-title" style="font-size: 16px;">Leave a Review</div>
-                
                 <div class="star-rating-form" id="starRatingSelect">
                     <i class="fas fa-star active" data-value="1"></i>
                     <i class="fas fa-star active" data-value="2"></i>
@@ -221,7 +219,7 @@
 
         <div class="visitor-counter">
             <span><i class="fas fa-users"></i> Total Website Visitors:</span>
-            <span class="counter-number" id="count">1</span>
+            <span class="counter-number" id="count">0</span>
         </div>
 
         <div class="copyright-text">
@@ -265,7 +263,7 @@
             });
         });
 
-        // Submit Review Logic
+        // Submit Review Logic (Guda 3 Max)
         function submitReview() {
             const name = document.getElementById('reviewerName').value;
             const text = document.getElementById('reviewerText').value;
@@ -302,11 +300,15 @@
             starIcons.forEach(s => s.classList.add('active'));
         }
 
+        // Sabon Tsarin Counter Mai Hana Kari Lokacin Refresh
         function updateLiveCounter() {
-            let currentVisits = localStorage.getItem('site_visits') || 1;
-            currentVisits = parseInt(currentVisits) + 1;
-            localStorage.setItem('site_visits', currentVisits);
-            document.getElementById('count').innerText = Number(currentVisits).toLocaleString();
+            if (!sessionStorage.getItem('hasVisitedThisSession')) {
+                let currentVisits = parseInt(localStorage.getItem('site_visits') || 0);
+                currentVisits++;
+                localStorage.setItem('site_visits', currentVisits);
+                sessionStorage.setItem('hasVisitedThisSession', 'true');
+            }
+            document.getElementById('count').innerText = Number(localStorage.getItem('site_visits') || 0).toLocaleString();
         }
 
         document.addEventListener("DOMContentLoaded", () => {
